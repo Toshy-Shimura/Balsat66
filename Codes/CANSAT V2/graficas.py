@@ -24,7 +24,7 @@ except:
 
 Samples = 50  #Muestras / Samples
 sampleTime = 150  #Tiempo de muestreo / Sample Time
-numData = 7
+numData = 7  #Numero de datos
 
 
 # Limites de los ejes / Axis limit
