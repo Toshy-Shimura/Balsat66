@@ -1,8 +1,10 @@
+//Librerias
 #include <Wire.h>
 #include <RH_NRF24.h>
 #include <SPI.h>
 #include "DHT.h"
 
+//Pines
 #define DHTPIN 2
 #define DHTTYPE DHT22
 #define CE_PIN 7
@@ -10,10 +12,11 @@
 #define CHANNEL 123
 #define PAYLOAD_SIZE 20
 
-
+//Objetos
 DHT dht(DHTPIN, DHTTYPE);
 RH_NRF24 radio;
 
+//Variables
 int16_t ax, ay, az, gx, gy, gz;
 float t, h;
 
