@@ -9,25 +9,25 @@ import numpy as np
 
 def getSerialData(self,Samples,numData,serialConnection, lines):
     for i in range(numData):
-        value  = float(serialConnection.readline().strip())  #Leer sensor / Read sensor
-        data[i].append(value) #Guarda lectura en la última posición / #Save reading in the end position
-        lines[i].set_data(range(Samples),data[i]) # Dibujar nueva linea / Drawn new line
+        value  = float(serialConnection.readline().strip())  
+        data[i].append(value)
+        lines[i].set_data(range(Samples),data[i]) 
 
         
-serialPort = input("Puerto serial: ") # Puerto serial arduino / Arduino serial port
-baudRate = 9600  # Baudios
+serialPort = input("COM: ") 
+baudRate = 9600
 
 try:
-  serialConnection = serial.Serial(serialPort, baudRate) # Instanciar objeto Serial / Instance Serial Object
+  serialConnection = serial.Serial(serialPort, baudRate) 
 except:
   print('Cannot conect to the port')
 
-Samples = 50  #Muestras / Samples
-sampleTime = 150  #Tiempo de muestreo / Sample Time
-numData = 7  #Numero de datos
+Samples = 50  
+sampleTime = 150  
+numData = 7  
 
 
-# Limites de los ejes / Axis limit
+#Axis limit
 xmin = 0
 xmax = Samples
 ymin = [-100, -100, -100, -180, -180, -10, 0]
